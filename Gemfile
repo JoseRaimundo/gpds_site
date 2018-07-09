@@ -44,7 +44,7 @@ end
 
 group :production do
   #Postgres
-  gem 'pg', '~> 0.18'
+  # gem 'pg', '~> 0.18'
   # usado por heroku
   gem 'rails_12factor'
 end
