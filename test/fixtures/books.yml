@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyString
+  resumo: MyString
+  paginas: MyString
+  tipo: MyString
+  idioma: MyString
+
+two:
+  titulo: MyString
+  resumo: MyString
+  paginas: MyString
+  tipo: MyString
+  idioma: MyString
