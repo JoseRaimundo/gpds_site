@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_133928) do
+ActiveRecord::Schema.define(version: 2018_07_14_175650) do
+
+  create_table "Books_People", id: false, force: :cascade do |t|
+    t.integer "Book_id", null: false
+    t.integer "Person_id", null: false
+  end
+
+  create_table "People_Projects", id: false, force: :cascade do |t|
+    t.integer "Project_id", null: false
+    t.integer "Person_id", null: false
+  end
 
   create_table "books", force: :cascade do |t|
     t.string "titulo"
@@ -20,6 +30,8 @@ ActiveRecord::Schema.define(version: 2018_07_12_133928) do
     t.string "idioma"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "event_id"
+    t.index ["event_id"], name: "index_books_on_event_id"
   end
 
   create_table "events", force: :cascade do |t|
