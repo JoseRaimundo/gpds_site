@@ -1,3 +1,3 @@
 class Event < ApplicationRecord
-    heas_many :books
+    has_many :books
 end

@@ -10,22 +10,27 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    
   end
 
   # GET /books/new
   def new
     @book = Book.new
+    @events = Event.all
   end
 
   # GET /books/1/edit
   def edit
+    @events = Event.all
   end
 
   # POST /books
   # POST /books.json
   def create
+    
+    @events = Event.all
     @book = Book.new(book_params)
-
+    print (">>>>>>>>>>########  #{@book.event} ######## #{@book.event_id} ######## #{@book.titulo}")
     respond_to do |format|
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
@@ -69,6 +74,7 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:titulo, :resumo, :paginas, :tipo, :idioma)
+      print(" #{:event_id}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> #{params[:event]}")
+      params.require(:book).permit(:titulo, :resumo, :paginas, :tipo, :idioma, :event_id)
     end
 end

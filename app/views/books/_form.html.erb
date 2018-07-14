@@ -1,3 +1,11 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>GPDS</title>
+</head>
+<body>
+	<%= render partial: "/layouts/menu" %>
+
 <%= form_with(model: book, local: true) do |form| %>
   <% if book.errors.any? %>
     <div id="error_explanation">
@@ -35,8 +43,16 @@
     <%= form.label :idioma %>
     <%= form.text_field :idioma %>
   </div>
+  
+    <div class="field">
+      <%= form.label :event %>
+      <%= form.select(:event_id, @events.collect {|s| [s.nome,s.id]}, id: :event_id) %>
+
+  </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+</body>
+</html>
