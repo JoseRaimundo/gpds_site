@@ -7,10 +7,10 @@
 	<%= render partial: "/layouts/menu" %>
 
 <p id="notice"><%= notice %></p>
+<div class="container ">
+      <%= link_to 'New Person', new_person_path %>
 
-<%= link_to 'New Person', new_person_path %>
 
-  <div class="container ">
       <div class="row">
           <% @people.each do |person| %>
               <div class="col col-md-6 center">
