@@ -8,9 +8,9 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Books</h1>
-
-<table>
+	<div class="container">
+<%= link_to 'New Book', new_book_path %>
+<table class="table">
   <thead>
     <tr>
       <th>Titulo</th>
@@ -18,6 +18,7 @@
       <th>Paginas</th>
       <th>Tipo</th>
       <th>Idioma</th>
+      <th>Autores</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -30,16 +31,22 @@
         <td><%= book.paginas %></td>
         <td><%= book.tipo %></td>
         <td><%= book.idioma %></td>
+        <tr> 
+          <% book.people do |p| %>
+            <%= p.nome %>
+          <% end %>
+        </tr> 
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      </tr> 
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
+
+</div>
 </body>
 </html>

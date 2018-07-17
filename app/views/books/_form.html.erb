@@ -35,20 +35,20 @@
   </div>
 
   <div class="field">
-    <%= form.label :tipo %>
-    <%= form.text_field :tipo %>
+      <%= form.label :tipo %>
+      <%= form.select :tipo, ['Artigo Completo', 'Artigo curto', 'Resumo', 'Poster', 'Livro', 'Capitulo de livro', 'Trabalho publicado em anais de evento'] %>
   </div>
 
   <div class="field">
     <%= form.label :idioma %>
-    <%= form.text_field :idioma %>
+    <%= form.select :idioma, ['Português', 'Inglês', 'Espanhol', 'Francês', 'Alemão'] %>
   </div>
+  
   
     <div class="field">
       <%= form.label :event %>
       <%= form.select(:event_id, @events.collect {|s| [s.nome,s.id]}, id: :event_id) %>
-
-  </div>
+    </div>
 
   <div class="actions">
     <%= form.submit %>

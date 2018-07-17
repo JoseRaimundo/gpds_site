@@ -17,11 +17,13 @@ class BooksController < ApplicationController
   def new
     @book = Book.new
     @events = Event.all
+    @people = Person.all
   end
 
   # GET /books/1/edit
   def edit
     @events = Event.all
+    @people = Person.all
   end
 
   # POST /books
@@ -29,8 +31,9 @@ class BooksController < ApplicationController
   def create
     
     @events = Event.all
+    @people = Person.all
     @book = Book.new(book_params)
-    print (">>>>>>>>>>########  #{@book.event} ######## #{@book.event_id} ######## #{@book.titulo}")
+    # print (">>>>>>>>>>########  #{@book.event} ######## #{@book.event_id} ######## #{@book.titulo}")
     respond_to do |format|
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
