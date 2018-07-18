@@ -1,6 +1,9 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<%= render partial: "/layouts/menu" %>
+
+<p id="notice"><%= notice %></p>
+<div class="container">
+<%= link_to 'New Project', new_project_path %>
 
 <table>
   <thead>
@@ -30,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+</div>

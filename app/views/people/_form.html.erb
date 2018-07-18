@@ -22,19 +22,20 @@
   </div>
 
   <div class="field">
-    <%= form.label :titulacao %>
-    <%= form.text_field :titulacao %>
-  </div>
-
-  <div class="field">
     <%= form.label :lattes %>
     <%= form.text_field :lattes %>
   </div>
 
   <div class="field">
-    <%= form.label :funcao %>
-    <%= form.text_field :funcao %>
+    <%= form.label :Titulação %>
+    <%= form.select :titulacao, ['Estudante','Graduando', 'Graduado', 'Mestrando', 'Mestre', 'Doutorando', 'Doutor'] %>
   </div>
+
+  <div class="field">
+    <%= form.label :funcao %>
+    <%= form.select :funcao, ['Pesquisador', 'Coordenador', 'Desenvolvedor'] %>
+  </div>
+
 
    <div class="field">
       <%= form.label :imagem %>

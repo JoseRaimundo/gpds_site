@@ -1,5 +1,7 @@
-<h1>New Book</h1>
+<%= render partial: "/layouts/menu" %>
 
-<%= render 'form', book: @book %>
-
-<%= link_to 'Back', books_path %>
+<p id="notice"><%= notice %></p>
+<div class="container ">
+    <%= render 'form', book: @book %>
+    <%= link_to 'Back', books_path %>
+</div>

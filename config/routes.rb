@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'autorias/autorias'
   resources :projects
   resources :events
   resources :books

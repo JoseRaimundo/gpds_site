@@ -1,10 +1,4 @@
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>GPDS</title>
-</head>
-<body>
-	<%= render partial: "/layouts/menu" %>
+
 
 <%= form_with(model: book, local: true) do |form| %>
   <% if book.errors.any? %>
@@ -54,5 +48,3 @@
     <%= form.submit %>
   </div>
 <% end %>
-</body>
-</html>
