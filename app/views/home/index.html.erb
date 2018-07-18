@@ -1,8 +1,17 @@
-
-
-
-    <%# <%= render partial: "/layouts/slide" %>
+  
 
 	<div class="container">
 		<%= render partial: "/layouts/content" %>
+		<br>
+	</div>
+		<%= render partial: "/layouts/slide" %>
+	<br>
+
+	<div class="container" id="pesquisas">
+		<% @projects.each do |p| %>
+          <div class="row">
+		  		
+		  </div>
+        <% end %>
+	<br>
 	</div>

@@ -11,9 +11,12 @@
   </head>
 
   <body class="page-responsive">
-    <%= render partial: "/layouts/menu" %>
-    <p class="notice"><%= notice %></p>
+  <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= render partial: "/layouts/menu" %>
+    
     <%= yield %>
+
+    <%= render partial: "/layouts/footer" %>
   </body>
 </html>

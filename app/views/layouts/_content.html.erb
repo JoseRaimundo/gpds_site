@@ -1,9 +1,11 @@
-<div class="container ">
+<div class="container" id="sobre">
   <div class="row">
-    <div class="col col-md-5">
+    <div class="col text-center py-3">
      <%= image_tag("gpds_logo_oficial.png", :alt => "rss feed",  width: "100%", height: "100%") %>
     </div>
-    <div class="col col-md-7">
+  </div>
+  <div class="row">
+    <div class="col text-center py-3">
         <h2>GPDS<br>Grupo de Processamento Digital de Sinais</h2>
         <p class="text-justify">Criado em 2012, o grupo, que é liderado pelo Professor Dr.
         <a href="http://lattes.cnpq.br/3729525547666162" target="_blank"><span id="group-leader">Carlos Danilo
@@ -13,8 +15,19 @@
         Processamento de Sinais, Comunicações Digitais e Teoria da Informação e Codificação e tem como principais
         objetivos, o ensino e a pesquisa, visando o desenvolvimento de aplicações e técnicas que resultem em
         melhorias nos processos de pesquisa e benefícios para a sociedade.</p>
-        <p><a class="btn btn-primary" target="_blank" role="button" href="http://dgp.cnpq.br/dgp/espelhogrupo/9039487349473415" target="_blank">Página do GPDS no DGP/CNPQ</a>
-        <a class="btn btn-primary" target="_blank" role="button" href="https://www.facebook.com/gpds.ifpb/" target="_blank"><i class="fa fa-facebook-official"></i>facebook</a></p>
+     </div>
+  </div>
+  <div class="row">
+    <div class="col text-center py-3">
+   
+        <input type="button" class="btn btn-primary" target="_blank" role="button" value="Página do GPDS no DGP/CNPQ" onclick=" relocate_home()"> 
+
+        <script>
+        function relocate_home()
+        {
+            location.href = "http://dgp.cnpq.br/dgp/espelhogrupo/9039487349473415";
+        } 
+        </script>
     </div>
   </div>
 </div>
