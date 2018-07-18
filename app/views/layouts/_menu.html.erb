@@ -1,5 +1,6 @@
 
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+    <%# para deixar ela com espaço dinamico sticky-top  %>
       <%# <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav"> %>
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="<%= home_index_path %>#page-top">
@@ -20,23 +21,45 @@
               <a class="nav-link js-scroll-trigger" href="<%= home_index_path %>#pesquisas">Pesquisas</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<%= home_index_path %>#contato">Contato</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="<%= people_path %>">Equipe</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="<%= books_path %>">Publicações</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="<%= home_index_path %>#contato">Contato</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="<%= events_path %>">Eventos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="<%= projects_path %>">Projetos</a>
-            </li>
-          </ul>
+
+            
+
+            <% if user_signed_in?%>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="<%= events_path %>">Eventos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="<%= projects_path %>">Projetos</a>
+                </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <!--%if current_user.person.nil?%-->
+                    <%# <%=current_user.email unless current_user.person.nil? %>
+                    <!--%end%-->
+              
+                    <li><%= link_to "Sair do usuário: #{current_user.email}", destroy_user_session_path, :method => 'delete', class:  "nav-link js-scroll-trigger" %></li>
+                </ul>
+            <%else%>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li><%= link_to "Login" , new_user_session_path, class:  "nav-link js-scroll-trigger" %></li>
+                    <li><%= link_to "Cadastrar" , new_user_registration_path, class:  "nav-link js-scroll-trigger" %></li>
+                </ul>
+            <% end%>
+          
         </div>
         </div>
     </nav>
+
+
 
 

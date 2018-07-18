@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'autorias/autorias'
-  resources :projects
-  resources :events
+  devise_for :users
+  
+  authenticated :user do
+    get 'autorias/autorias'
+    resources :projects
+    resources :events
+  end
   resources :books
   resources :people
   get 'home/index'

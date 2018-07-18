@@ -1,10 +1,11 @@
 
-<%= render partial: "/layouts/menu" %>
-
-<p id="notice"><%= notice %></p>
 <div class="container ">
-      <%= link_to 'New Person', new_person_path %>
-
+    <div class="row">
+      <% if user_signed_in?%>
+        <%= link_to 'Cadastrar novo membro', new_person_path, class: "btn btn-primary" %>
+      <% end %>
+      </div>
+    <br>
       <div class="row">
           <% @people.each do |person| %>
               <div class="col col-md-6 center">
@@ -15,18 +16,13 @@
                   <%= person.titulacao %> <br>
                   <td><%= person.lattes %></td><br>
                   <%= link_to 'Show', person %><br>
-                  <%= link_to 'Edit', edit_person_path(person) %><br>
-                  <%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+                  <% if user_signed_in?%>
+                    <%= link_to 'Edit', edit_person_path(person) %><br>
+                    <%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+                  <% end %>
               </div>
           <% end %>
       </div>
   </div>
-
-
-
 <br>
-
-
-
-</body>
-</html>
+</div>

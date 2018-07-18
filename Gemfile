@@ -92,3 +92,9 @@ gem "bootsnap", require: false
 
 #Tradução usando i18n
 gem 'rails-i18n', '~> 5.1'
+
+
+# Devise
+gem 'devise'
+# Devise - I18n
+gem 'devise-i18n'
