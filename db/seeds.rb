@@ -42,11 +42,91 @@ Event.create!(
 )
 
 
-# Book.create!(
-#     titulo: "Artigo apresentado no SBrT",
-#     resumo: "--",
-#     paginas: "100-109",
-#     tipo: "Artigo",
-#     idioma: "Português",
-#     event: 1
-# )
+Book.create!(
+    titulo: "Artigo apresentado no SBrT",
+    resumo: "--",
+    paginas: "100-109",
+    tipo: "Artigo",
+    idioma: "Português",
+    event_id: 1
+)
+Book.create!(
+    titulo: "Artigo apresentado no SBrT",
+    resumo: "--",
+    paginas: "100-109",
+    tipo: "Artigo",
+    idioma: "Português",
+    event_id: 1
+)
+Book.create!(
+    titulo: "Artigo apresentado no SBrT",
+    resumo: "--",
+    paginas: "100-109",
+    tipo: "Artigo",
+    idioma: "Português",
+    event_id: 1
+)
+Book.create!(
+    titulo: "Artigo apresentado no SBrT",
+    resumo: "--",
+    paginas: "100-109",
+    tipo: "Artigo",
+    idioma: "Português",
+    event_id: 1
+)
+Book.create!(
+    titulo: "Artigo apresentado no SBrT",
+    resumo: "--",
+    paginas: "100-109",
+    tipo: "Artigo",
+    idioma: "Português",
+    event_id: 1
+)
+Book.create!(
+    titulo: "Artigo apresentado no SBrT",
+    resumo: "--",
+    paginas: "100-109",
+    tipo: "Artigo",
+    idioma: "Português",
+    event_id: 1
+)
+Book.create!(
+    titulo: "Artigo apresentado no SBrT",
+    resumo: "--",
+    paginas: "100-109",
+    tipo: "Artigo",
+    idioma: "Português",
+    event_id: 1
+)
+Book.create!(
+    titulo: "Artigo apresentado no SBrT",
+    resumo: "--",
+    paginas: "100-109",
+    tipo: "Artigo",
+    idioma: "Português",
+    event_id: 1
+)
+Book.create!(
+    titulo: "Artigo apresentado no SBrT",
+    resumo: "--",
+    paginas: "100-109",
+    tipo: "Artigo",
+    idioma: "Português",
+    event_id: 1
+)
+Book.create!(
+    titulo: "Artigo apresentado no SBrT",
+    resumo: "--",
+    paginas: "100-109",
+    tipo: "Artigo",
+    idioma: "Português",
+    event_id: 1
+)
+Book.create!(
+    titulo: "Artigo apresentado no SBrT",
+    resumo: "--",
+    paginas: "100-109",
+    tipo: "Artigo",
+    idioma: "Português",
+    event_id: 1
+)

@@ -10,7 +10,21 @@
 	<div class="container" id="pesquisas">
 		<% @projects.each do |p| %>
           <div class="row">
-		  		
+
+			<div class="col-md-12 text-center py-3">
+				<h3><%= p.titulo %></h3>
+			</div>
+			<div class="col-md-12 text-center py-3">
+				<h4><%= p.descricao %></h4>
+			</div>
+			<div class="row">
+				<% p.people do |integrantes| %>
+					<div class="col-md-3 text-center py-3">
+						<p><%= integrantes.nome %></p>
+						<p>teste</p>
+					</div>
+				<% end %>
+			</div>
 		  </div>
         <% end %>
 	<br>

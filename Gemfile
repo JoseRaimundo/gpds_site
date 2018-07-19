@@ -98,3 +98,8 @@ gem 'rails-i18n', '~> 5.1'
 gem 'devise'
 # Devise - I18n
 gem 'devise-i18n'
+
+#Gem de paginação
+gem 'kaminari'
+gem 'kaminari-i18n', '~> 0.5.0'
+

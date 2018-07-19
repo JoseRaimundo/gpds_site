@@ -2,7 +2,7 @@
 
 <div class="container">
     <% if user_signed_in?%>
-        <%= link_to 'New Book', new_book_path %>
+        <%= link_to 'Cadastar novo trabalho', new_book_path %>
     <% end %>
     <table class="table">
       <thead>
@@ -27,8 +27,8 @@
             <td><%= book.tipo %></td>
             <td><%= book.idioma %></td>
             <td>
-              <% book.people do |p| %>
-                <%= p.nome %>
+              <% book.people.each do |p| %>
+                <%= p.nome %>,
               <% end %>
             </td> 
             <td><%= link_to 'Resumo', book %></td>
@@ -43,5 +43,6 @@
         <% end %>
       </tbody>
     </table>
+    <%= paginate(@books) %>
     <br>
 </div>
