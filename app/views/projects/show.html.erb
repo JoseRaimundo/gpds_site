@@ -22,6 +22,23 @@
   <%= @project.datainicio %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<p>
+  <strong>Menbros:</strong><br>
+  <% @project.people.each do |p| %>
+    <%= p.nome %><br>
+  <% end %>
+</p>
+
+
+<% if user_signed_in?%>
+
+  <%= form_tag project_path(@project), :method => 'get' do %>
+      <%= select(nil, "person_id",   Person.all.collect {|p| [p.nome, p.id ] }) %>
+      <br><br>
+      <%= submit_tag "Adicionar membro" , :name => nil %>
+  <% end %>
+<% end %>
+
+<%= link_to 'Editar', edit_project_path(@project) %> |
+<%= link_to 'Voltar', projects_path %>
 </div>

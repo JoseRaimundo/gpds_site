@@ -53,11 +53,11 @@ ActiveRecord::Schema.define(version: 2018_07_18_125659) do
     t.string "imagem"
   end
 
-  create_table "people_projcts", force: :cascade do |t|
+  create_table "people_projects", force: :cascade do |t|
     t.integer "person_id"
     t.integer "project_id"
-    t.index ["person_id"], name: "index_people_projcts_on_person_id"
-    t.index ["project_id"], name: "index_people_projcts_on_project_id"
+    t.index ["person_id"], name: "index_people_projects_on_person_id"
+    t.index ["project_id"], name: "index_people_projects_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|

@@ -17,13 +17,16 @@
 			<div class="col-md-12 text-center py-3">
 				<h4><%= p.descricao %></h4>
 			</div>
-			<div class="row">
-				<% p.people do |integrantes| %>
-					<div class="col-md-3 text-center py-3">
-						<p><%= integrantes.nome %></p>
-						<p>teste</p>
-					</div>
-				<% end %>
+
+			<div class="i-am-centered">
+
+				<div class="row text-center py-3">
+					<% p.people.each do |integrantes| %>
+						<div class="col-md-6">
+							<p><%= integrantes.nome %></p>
+						</div>
+					<% end %>
+				</div>
 			</div>
 		  </div>
         <% end %>

@@ -10,6 +10,11 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    if params[:person_id]
+      @person = Person.find(params[:person_id])
+      @project.people << @person
+      @project.save
+    end
   end
 
   # GET /projects/new

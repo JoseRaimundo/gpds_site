@@ -12,7 +12,11 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    
+    if params[:person_id]
+      @person = Person.find(params[:person_id])
+      @book.people << @person
+      @book.save
+    end
   end
 
   # GET /books/new
