@@ -9,6 +9,7 @@
         <tr>
           <th>Titulo</th>
           <th>Publicado em:</th>
+          <th>Ano</th>
           <th>Paginas</th>
           <th>Tipo</th>
           <th>Idioma</th>
@@ -20,27 +21,30 @@
 
       <tbody>
         <% @books.each do |book| %>
-          <tr>
-            <td><%= book.titulo %></td>
-            <td><%= book.event.nome %></td>
-            <td><%= book.paginas %></td>
-            <td><%= book.tipo %></td>
-            <td><%= book.idioma %></td>
-            <td>
-              <% book.people.each do |p| %>
-                <%= p.nome %>,
-              <% end %>
-            </td> 
-            <td><%= link_to 'Resumo', book %></td>
+            <div vocab="https://schema.org/" about="#trabalho_<%= book.id %>" typeof="Article">
+              <tr>
+                <td> <span property="name"><%= book.titulo %></span></td>
+                <div property="isPartOf" typeof="PublicationIssue" resource="#event">
+                    <td><span property="name"><%= book.event.nome %></span></td>
+                    <td><span property="datePublished"><%= book.event.data %></span></td>
 
-
-
-            <% if user_signed_in?%>
-                <td><%= link_to 'Edit', edit_book_path(book) %></td>
-                <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-     
-            <% end %>
-          </tr> 
+                </div>
+                <td><span property="pagination"><%= book.paginas %></span> </td>
+                <td><span property="interactivityType"><%= book.tipo %></span></td>
+                <td><span property="inLanguage"><%= book.idioma %></span></td>
+                <td>
+                  <% book.people.each do |p| %>
+                    <span property="author"><%= p.nome %></span> ,
+                  <% end %>
+                </td> 
+                <td><%= link_to 'Resumo', book %></td>
+                <% if user_signed_in?%>
+                    <td><%= link_to 'Edit', edit_book_path(book) %></td>
+                    <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+                <% end %>
+              </tr> 
+              </div>
         <% end %>
       </tbody>
     </table>

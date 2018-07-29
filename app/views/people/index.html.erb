@@ -10,21 +10,25 @@
             <div class="row">
                 <% @people.each do |person| %>
                     <div class="col-md-3 center">
-                        <% if File.file?("#{Rails.root}/app/assets/images/membros/#{person.imagem}") %> 
-                            <%= image_tag("membros/#{person.imagem}", :alt => "rss feed",  width: "120px", height: "120px", class: "rounded-circle") %> <br>
-                        <% else %>
-                            <%= image_tag("membros/avatar.png", :alt => "rss feed",  width: "120px", height: "120px", class: "rounded-circle") %> <br>
-                        <% end %>
-                        <td><%= person.funcao %></td><br>
-                        <%= person.nome %><br>
-                        <%= person.titulacao %> <br>
-                        <td><%= link_to 'Lattes', person.lattes, target: "_blank" %> <br>
-                        
-                        <% if user_signed_in?%>
-                        <%= link_to 'Show', person %><br>
-                            <%= link_to 'Editar', edit_person_path(person) %><br>
-                            <%= link_to 'Remover', person, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-                        <% end %>
+                        <div vocab="https://schema.org/" about="#integrante_<%= person.nome.delete(' ') %>" typeof="Person">
+
+                            <% if File.file?("#{Rails.root}/app/assets/images/membros/#{person.imagem}") %> 
+                                <%= image_tag("membros/#{person.imagem}", :rel => "image", :alt => "rss feed",  width: "120px", height: "120px", class: "rounded-circle") %> <br>
+                            <% else %>
+                                <%= image_tag("membros/avatar.png", :rel => "image", :alt => "rss feed",  width: "120px", height: "120px", class: "rounded-circle") %> <br>
+                            <% end %>
+                     
+                            <td><span property="jobTitle"><%= person.funcao %></span></td><br>
+                            <span property="name"> <%= person.nome %></span><br>
+                            <span property="educationalAlignment"><%= person.titulacao %></span> <br>
+                            <td><a rel="url" href="<%= person.lattes %>" target="_blank">Lattes </a><br>
+                            
+                            <% if user_signed_in?%>
+                            <%= link_to 'Show', person %><br>
+                                <%= link_to 'Editar', edit_person_path(person) %><br>
+                                <%= link_to 'Remover', person, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+                            <% end %>
+                        </div>
                     </div>
                 <% end %>
             </div>

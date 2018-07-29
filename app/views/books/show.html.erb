@@ -1,4 +1,29 @@
-
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+        "@id": "#issue",
+        "@type": "PublicationIssue",
+        "name":"<%= @book.titulo %>",
+        "datePublished": "<%= @book.event.data %>",
+        "isPartOf": {
+            "@id": "#periodical",
+            "@type": [
+                "PublicationVolume",
+                "Periodical"
+            ],
+            "pagination": "<%= @book.paginas %>",
+            "publisher": "<%= @book.event.nome %>"
+        },
+        "author": [
+          <% @book.people.each do |p| %>
+              {
+                  "@type":"Person",
+                  "name" : "<%= p.nome %>"
+              },
+          <% end %>
+        ]
+}
+</script>
 
 <div class="container">
 <p id="notice"><%= notice %></p>

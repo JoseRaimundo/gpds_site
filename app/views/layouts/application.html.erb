@@ -8,6 +8,39 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org/",
+        "@id": "",
+        "@type": "EducationalOrganization",
+        "name": "Grupo de Processamento de Sinais Digitais",
+        "address": {
+          "streetAddress": "Av. Primeiro de Maio, 720",
+          "addressLocality": "João Pessoa",
+          "postalCode": "58.015-430",
+          "addressRegion": "PB"
+        },
+        "email":"gpds@ifpb.edu.br",
+        "department":"Laboratório de engenharia elétrica - IFPB",
+        "foundingDate":"2012",
+        "parentOrganization": "Insitituto Federal da Paraíba",
+        "alternateName":"GPDS",
+        "founder":[
+          {
+            "@type": "Person",
+            "name": "Carlos Danilo Miranda Regis"
+          },
+          {
+            "@type": "Person",
+            "name": "Luiz Guedes Caldeira"
+          }
+        ],
+      
+        "description":"O GPDS atua nas áreas de Processamento de Sinais, Comunicações Digitais e Teoria da Informação e Codificação e tem como principais objetivos, o ensino e a pesquisa, visando o desenvolvimento de aplicações e técnicas que resultem em melhorias nos processos de pesquisa e benefícios para a sociedade."
+      }
+    </script>
+
   </head>
 
   <body class="page-responsive">

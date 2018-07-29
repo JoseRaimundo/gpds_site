@@ -8,27 +8,31 @@
 	<br>
 
 	<div class="container" id="pesquisas">
-		<% @projects.each do |p| %>
-          <div class="row">
+		<div vocab="https://schema.org/" about="#porjeto" typeof="PlanAction">
+			<% @projects.each do |p| %>
+			<div class="row">
 
-			<div class="col-md-12 text-center py-3">
-				<h3><%= p.titulo %></h3>
-			</div>
-			<div class="col-md-12 text-center py-3">
-				<h4><%= p.descricao %></h4>
-			</div>
+				<div class="col-md-12 text-center py-3">
+					<h3><span property="name"><%= p.titulo %></span></h3>
+				</div>
+				<div class="col-md-12 text-center py-3">
+					<h4><span property="description"><%= p.descricao %></span></h4>
+				</div>
 
-			<div class="i-am-centered">
+				<div class="i-am-centered">
 
-				<div class="row text-center py-3">
-					<% p.people.each do |integrantes| %>
-						<div class="col-md-6">
-							<p><%= integrantes.nome %></p>
-						</div>
-					<% end %>
+					<div class="row text-center py-3">
+						<% p.people.each do |integrantes| %>
+							<div class="col-md-6">
+								<p> <span property="participant"><%= integrantes.nome %></span></p>
+							</div>
+						<% end %>
+					</div>
 				</div>
 			</div>
-		  </div>
-        <% end %>
+			<% end %>
+		</div>
 	<br>
 	</div>
+
+</body>
